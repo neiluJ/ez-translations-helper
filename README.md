@@ -24,19 +24,19 @@ php bin/tr-helper.php migrate <legacy_file.ts> --lang=<language code> >> <output
 Note: If you have ```short_open_tag``` set to ```On``` (which is deprecated btw) you might run the script like this:
 
 ```
-php -dshort_open_tag=Off migrate <legacy_file.ts> --lang=<language code> >> <output file>
+php -dshort_open_tag=Off bin/tr-helper.php migrate <legacy_file.ts> --lang=<language code> >> <output file>
 ```
 
 ### Examples
 
 ``` 
-php bin/tr-helper.php migrate /path/to/ezpublish_legacy/extension/mysite/translations/fre-FR/translation.ts --lang=fr >> src/MySite/SiteBundle/Resources/translations/messages.fr.xliff
+php bin/tr-helper.php migrate /path/to/ezpublish_legacy/extension/mysite/translations/fre-FR/translation.ts --lang=fr >> src/MySite/SiteBundle/Resources/translations/messages.fr.xlf
 ```
 
 or with Phar:
 
 ``` 
-php tr-helper.phar migrate /path/to/ezpublish_legacy/extension/mysite/translations/fre-FR/translation.ts --lang=fr >> src/MySite/SiteBundle/Resources/translations/messages.fr.xliff
+php tr-helper.phar migrate /path/to/ezpublish_legacy/extension/mysite/translations/fre-FR/translation.ts --lang=fr >> src/MySite/SiteBundle/Resources/translations/messages.fr.xlf
 ```
 
 ## Parameters
@@ -59,5 +59,3 @@ You can compile this tool into a simple Phar archive to be executed wherever you
 ``` 
 php -dphar.readonly=0 vendor/neiluj/phactory/bin/phactory.phar make . tr-helper  --vendors --stub=src/neiluJ/TranslationsHelper/stub.php
 ```
-
-
