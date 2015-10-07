@@ -1,0 +1,27 @@
+{
+  "name": "neiluj/ez-translations-helper",
+  "description": "Migrate eZ Publish Legacy Translations files (.ts) to Symfony",
+  "type": "library",
+  "keywords": ["utils", "ezpublish", "translations", "tool"],
+  "license": "BSD",
+  "authors": [
+    {
+      "name": "neiluJ",
+      "email": "julien@nitronet.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "fwk/xml": "dev-master",
+    "symfony/console": "dev-master"
+  },
+  "require-dev": {
+    "neiluj/phactory": "dev-master"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-0": {
+      "neiluJ\\TranslationsHelper": "src/"
+    }
+  }
+}
