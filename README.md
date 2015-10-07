@@ -2,7 +2,12 @@
 
 This is a small utility that helps to migrate eZ Publish Legacy (4.x) translations files (.ts) into Symfony-compatibles ones.
 
-Note: Generated files should ALWAYS be checked by the developer as some errors are possible depending on the complexity of the original translations.
+Note: Generated files should ALWAYS be checked by the developer as some errors are possible depending on the complexity of the original translations, CDATAs and Html entities.
+You can check the validity of your file within your eZ/Symfony installation:
+
+```
+php ezpublish/console debug:translation <language code> <your bundle name>
+```
 
 ## Installation
 
@@ -12,9 +17,14 @@ php composer.phar require neiluj/ez-translations-helper
 
 ## Usage
 
-
 ``` 
 php bin/tr-helper.php migrate <legacy_file.ts> --lang=<language code> >> <output file>
+```
+
+Note: If you have ```short_open_tag``` set to ```On``` (which is deprecated btw) you might run the script like this:
+
+```
+php -dshort_open_tag=Off migrate <legacy_file.ts> --lang=<language code> >> <output file>
 ```
 
 ### Examples
